@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="a general strategy to speed up the learning procedure for almost all radiance fields based methods, named 'Fast Learning Radiance Fields by Shooting Much Fewer Rays.'">
+  <meta name="keywords" content="Novel view synthesis, Neural rendering, Radiance fields, Neural networks, Quadtree">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fast Learning Radiance Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <!-- <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/junshengzhou/3DAttriFlow">
+            3DAttriFlow
+          </a>
+          <a class="navbar-item" href="https://github.com/mabaorui/NeuralPull-Pytorch">
+            Neural-Pull
+          </a>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Fast Learning Radiance Fields by Shooting Much Fewer Rays</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zparquet.github.io/">Wenyuan Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://breezexrf.github.io/">Ruofan Xing</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://zengyf131.github.io/">Yunfan Zeng</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yushen-liu.github.io/">Yu-Shen Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Kanle Shi</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://h312h.github.io/">Zhizhong Han</a><sup>4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Software, Tsinghua University,</span>
+            <span class="author-block"><sup>2</sup>Department of Computer Science and Technology, Tsinghua University,</span>
+            <span class="author-block"><sup>3</sup>Kuaishou Technology</span>
+            <span class="author-block"><sup>4</sup>Wayne State University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zParquet/Fast-Learning"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px"></h2>
+
+        <img src="./resources/overview.jpg" class="center">
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Learning radiance fields has shown remarkable results for novel view synthesis. The learning procedure usually costs lots of time, which motivates the latest methods to speed up the learning procedure by learning without neural networks or using more efficient data structures. However, these specially designed approaches do not work for most of radiance fields based methods. To resolve this issue, we introduce a general strategy to speed up the learning procedure for almost all radiance fields based methods. Our key idea is to reduce the redundancy by shooting much fewer rays in the multi-view volume rendering procedure which is the base for almost all radiance fields based methods. We find that shooting rays at pixels with dramatic color change not only significantly reduces the training burden but also barely affects the accuracy of the learned radiance fields. In addition, we also adaptively subdivide each view into a quadtree according to the average rendering error in each node in the tree, which makes us dynamically shoot more rays in more complex regions with larger rendering error. We evaluate our method with different radiance fields based methods under the widely used benchmarks. Experimental results show that our method achieves comparable accuracy to the state-of-the-art with much faster training.          
+            </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+        <img src="./resources/method.jpg" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            Our method is a general framework of accelerating training
+            procedure, which can be easily integrated with mainstream
+            radiance fields based methods. This generalization ability comes
+            from the way of how we shoot much fewer rays in volume
+            rendering to perceive radiance fields better, which is a common
+            procedure in radiance fields based methods. Our method is
+            formed by two main components: (1) a probability-based
+            sampling function which samples rays according to the input
+            image context and (2) an adaptive quadtree subdivision strategy
+            that learns where to reduce rays in simple regions and where
+            to increase rays in complex regions. 
+          </p>
+          <p style="margin-top: 30px">
+            The above figure illustrates our
+            method. Given an input view, we first (a) calculate a probability distribution according to the context around each pixel. Then we (b)
+            use it as a prior probability distribution to sample pixels from which we shoot rays. These rays are fed into (c) a radiance fields backbone network and an
+            average rendering loss is gathered for quadtree leaf nodes. Then (d) an adaptive quadtree subdivision algorithm is applied on each leaf node according to its
+            average rendering loss to adjust the distribution of sampling rays.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Visualization Results</h2>
+
+
+        <h3 class="title is-4">Comparison on Synthetic Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/comparison-synthetic.jpg" class="center">
+        </div>
+
+        <h3 class="title is-4">Comparison on Real-World Dataset</h3>
+        <div class="content has-text-justified">
+          <img src="./resources/comparison-llff.jpg" class="center">
+        </div>
+        <div class="content has-text-justified">
+          <img src="./resources/comparison-lf.jpg" class="center">
+        </div>
+        <div class="content has-text-justified">
+          <img src="./resources/comparison-tnt.jpg" class="center">
+        </div>
+          
+        
+
+        <h3 class="title is-4">Quadtree Visualization And More Comparison Results</h3>
+        <div class="content has-text-justified">
+          <p>
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 loop
+                 width="90%">
+            <source src="./resources/video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <!-- <pre><code>@article{zhou2022-3DOAE,
+      title={Self-Supervised Point Cloud Representation Learning with Occlusion Auto-Encoder},
+      author={Zhou, Junsheng and Wen, Xin and Ma, Baorui and Liu, Yu-Shen and Gao, Yue and Fang, Yi and Han, Zhizhong},
+      journal={arXiv preprint arXiv:2203.14084},
+      year={2022}
+    }
+}</code></pre> -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
