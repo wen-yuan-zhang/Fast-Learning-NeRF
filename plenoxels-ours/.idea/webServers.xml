@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e7bd9a33-b852-461d-b0ee-dbc628c77a5e" name="166.111.81.7">
+        <fileTransfer rootFolder="/home/zhangwenyuan" accessType="SFTP" host="166.111.81.8" port="8103" sshConfigId="7d5f6922-eeee-437a-95b3-5be036102ea4" sshConfig="zhangwenyuan@166.111.81.8:8103 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="6ddb1c7c-1e2a-448f-929d-907c83d988f1" name="166.111.87.53">
+        <fileTransfer rootFolder="/home/zhangwenyuan" accessType="SFTP" host="166.111.81.9" port="8103" sshConfigId="4d272fe1-51cc-4e01-a491-0c39c871512f" sshConfig="zhangwenyuan@166.111.81.9:8103 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="79e8b992-3254-4b3a-b3d2-62ad6c10cd29" name="53:8102(1080)">
+        <fileTransfer rootFolder="/home/zhangwenyuan" accessType="SFTP" host="166.111.81.9" port="8102" sshConfigId="de6e2ddc-84dd-470d-8d21-4ff8888ac288" sshConfig="zhangwenyuan@166.111.81.9:8102 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="dc42f55a-ed28-4a1a-959b-f6520ccad514" name="53:8103(3090)">
+        <fileTransfer rootFolder="/home/zhangwenyuan" accessType="SFTP" host="166.111.81.9" port="8103" sshConfigId="4d272fe1-51cc-4e01-a491-0c39c871512f" sshConfig="zhangwenyuan@166.111.81.9:8103 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

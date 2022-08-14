@@ -1,0 +1,19 @@
+{
+    "reso": "[[256, 256, 256], [512, 512, 512]]",
+    "upsamp_every": 3840000,
+    "lr_sigma": 3e1,
+    "lr_sh": 1e-2,
+    "lambda_tv": 1e-5,
+    "lambda_tv_sh": 1e-3,
+
+
+    "n_epoch": 15,
+    "init_level": 1,
+    "subdivide_every": 200,
+    "allPixel_every": 300,
+    "subdivide_thres": 0.005,
+    "rays_downscale": 1,
+    "randSamp_perc": 1.0,
+    "save_every": 1,
+    "dset_name": "lego"
+}

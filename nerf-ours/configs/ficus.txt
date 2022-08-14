@@ -1,0 +1,32 @@
+expname = ficus_ours
+# expname = test
+basedir = ./logs
+datadir = data/nerf_synthetic/ficus
+dataset_type = blender
+
+no_batching = True
+
+use_viewdirs = True
+white_bkgd = True
+lrate_decay = 500
+
+N_samples = 64
+N_importance = 128
+# how to resize??
+N_rand = 1920
+
+precrop_iters = 500
+precrop_frac = 0.5
+
+half_res = False
+
+### OURS
+n_epoch = 18
+init_level = 2
+subdivide_every = 3
+# init_level = 1
+# subdivide_every = 3000
+subdivide_thres = 0.001
+randSamp_perc = 1.0
+dset_name = lego
+end_rand = 11

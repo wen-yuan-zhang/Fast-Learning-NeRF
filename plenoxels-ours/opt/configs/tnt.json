@@ -1,0 +1,31 @@
+{
+    "reso": "[[128, 128, 128], [256, 256, 256], [512, 512, 512], [640, 640, 640]]",
+    "reso": "[[128, 128, 128]]",
+    "n_iters": 10240000,
+    "background_nlayers": 64,
+    "background_reso": 1024,
+    "upsamp_every": 2560000,
+    "lr_sigma": 3e1,
+    "lr_sh": 1e-2,
+    "lr_sigma_delay_steps": 15000,
+    "thresh_type": "weight",
+    "weight_thresh": 1.28,
+    "lambda_tv": 5e-5,
+    "lambda_tv_sh": 5e-3,
+    "lambda_tv_background_sigma": 1e-3,
+    "lambda_tv_background_color": 1e-3,
+    "lambda_beta": 1e-5,
+    "lambda_sparsity": 1e-11,
+    "background_brightness": 1.0,
+    "tv_early_only": 0,
+
+
+    "n_epoch": 20,
+    "init_level": 1,
+    "subdivide_every": 2,
+    "allPixel_every": 300,
+    "subdivide_thres": 0.03,
+    "rays_downscale": 0.8,
+    "randSamp_perc": 0.5,
+    "dset_name": "Truck"
+}

@@ -1,0 +1,25 @@
+{
+    "reso": "[[256, 256, 128], [512, 512, 128], [1408, 1156, 128]]",
+    "reso": "[[256, 256, 128]]",
+    "upsamp_every": 128000000,
+    "lr_sigma": 3e1,
+    "lr_sh": 1e-2,
+    "thresh_type": "sigma",
+    "density_thresh": 5,
+    "lambda_tv": 5e-4,
+    "lambda_tv_sh": 5e-3,
+    "lambda_sparsity": 1e-12,
+    "background_brightness": 0.5,
+    "last_sample_opaque": false,
+    "tv_early_only": 0,
+
+
+    "n_epoch": 16,
+    "init_level": 1,
+    "subdivide_every": 2,
+    "allPixel_every": 100,
+    "subdivide_thres": 0.02,
+    "rays_downscale": 3,
+    "randSamp_perc": 0.4,
+    "dset_name": "fern"
+}
