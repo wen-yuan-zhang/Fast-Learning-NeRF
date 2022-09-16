@@ -9,7 +9,7 @@
 
  <sup>1</sup>Tsinghua University, <sup>2</sup>Kuaishou Technology, <sup>3</sup>Wayne State University  
 
-### [Project Page](https://zparquet.github.io/Fast-Learning/) |  [Paper]()
+### [Project Page](https://zparquet.github.io/Fast-Learning/) |  [Paper](https://arxiv.org/pdf/2208.06821.pdf)
 In this work, we introduce a general strategy to speed up the learning procedure for almost all radiance fields based methods by shooting much fewer rays. 
 <br><br>
 
@@ -107,5 +107,10 @@ CUDA_VISIBLE_DEVICES=0 python render_imgs.py ckpt/paper_lego/ckpt.npz data/nerf_
 ## Citation
 
 ```
-
+@article{zhang2022fast,
+  title={Fast Learning Radiance Fields by Shooting Much Fewer Rays},
+  author={Zhang, Wenyuan and Xing, Ruofan and Zeng, Yunfan and Liu, Yu-Shen and Shi, Kanle and Han, Zhizhong},
+  journal={arXiv preprint arXiv:2208.06821},
+  year={2022}
+}
 ```
