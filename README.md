@@ -20,20 +20,21 @@ In this work, we introduce a general strategy to speed up the learning procedure
 
 Python 3 dependencies:
 
-* Pytorch
+* pytorch
 * matplotlib
 * numpy
 * imageio
 * configargparse
 
 
-Specifically, our experiments are conducted on three radiance field based methods, including [**NeRF**](https://github.com/bmild/nerf), [**NeRF++**](https://github.com/Kai-46/nerfplusplus) and [**Plenoxels**](https://github.com/sxyu/svox2). We finetuned their official codes and apply our method to the baseline methods. To setup each individual environment for each experiment, please refer to the project pages of the baseline methods.
+Specifically, our experiments are conducted on six radiance field based methods, including [**NeRF**](https://github.com/bmild/nerf), [**NeRF++**](https://github.com/Kai-46/nerfplusplus), [**Plenoxels**](https://github.com/sxyu/svox2), [**Mip-NeRF 360**](https://github.com/google-research/multinerf), [**Instant-NGP**](https://github.com/NVlabs/instant-ngp) and [**NeuS**](https://github.com/Totoro97/NeuS). We finetuned their official codes and apply our method to the baseline methods. To setup each individual environment for each experiment, please refer to the project pages of the baseline methods.
 
 ## Data preparation
 
-We use four datasets named synthetic dataset, llff dataset, lf dataset and tanks_and_temples dataset, which are widely used in radiance fields based methods. You can download the four datasets from the following links.
+We use five datasets named synthetic dataset, llff dataset, lf dataset, tanks_and_temples dataset, which are widely used in radiance fields based methods. You can download the four datasets from the following links.
 
-### [Synthetic Dataset](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1) | [LF Dataset](https://drive.google.com/file/d/1gsjDjkbTh4GAR9fFqlIDZ__qR9NYTURQ/view?usp=sharing) | [LLFF Dataset](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1) | [Tanks And Temples Dataset](https://drive.google.com/file/d/11KRfN91W1AxAW6lOFs4EeYDbeoQZCi87/view?usp=sharing)
+### [Synthetic Dataset](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1) | [LF Dataset](https://drive.google.com/file/d/1gsjDjkbTh4GAR9fFqlIDZ__qR9NYTURQ/view?usp=sharing) | [LLFF Dataset](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1)
+### [Tanks And Temples Dataset (for NeRF++/Plenoxels)](https://drive.google.com/file/d/11KRfN91W1AxAW6lOFs4EeYDbeoQZCi87/view?usp=sharing) | [(for Instant-NGP)](https://dl.fbaipublicfiles.com/nsvf/dataset/TanksAndTemple.zip)
 </br>
 
 
@@ -85,12 +86,24 @@ Testing
 CUDA_VISIBLE_DEVICES=0 python render_imgs.py ckpt/paper_lego/ckpt.npz data/nerf_synthetic/lego
 ```
 
+### Running Instant-NGP-based Method:
+
+```
+cd ngp-ours
+```
+
+Training & Testing
+```
+CUDA_VISIBLE_DEVICES=0 python python main_nerf.py data/TanksAndTemple/Family --workspace log/tnt/Family -O --bound 1.0 --scale 0.33 --dt_gamma 0
+```
+
+
 
 ## Some Visualization Results
 
 ### Visulization of Quadtree Subdivision Procedure
 
-<img src='imgs/quadtree-subdivision.png'/>
+<img src='imgs/quadtree-subdivision.png' />
 
 ### Visualization of Comparison on Synthetic Dataset
 
@@ -103,6 +116,16 @@ CUDA_VISIBLE_DEVICES=0 python render_imgs.py ckpt/paper_lego/ckpt.npz data/nerf_
 ### Visualization of Comparison on Tanks And Temples Dataset
 
 <img src='imgs/compare-tnt.jpg'/>
+<img src='imgs/compare-instant.png'/>
+
+### Visualization of Comparison on Mip-NeRF 360 Dataset
+
+<img src='imgs/compare-mipnerf360.png'/>
+
+### Visualization of Comparison on DTU Dataset
+
+<img src='imgs/compare-neus.png'/>
+
 
 ## Citation
 
@@ -110,7 +133,8 @@ CUDA_VISIBLE_DEVICES=0 python render_imgs.py ckpt/paper_lego/ckpt.npz data/nerf_
 @article{zhang2022fast,
   title={Fast Learning Radiance Fields by Shooting Much Fewer Rays},
   author={Zhang, Wenyuan and Xing, Ruofan and Zeng, Yunfan and Liu, Yu-Shen and Shi, Kanle and Han, Zhizhong},
-  journal={arXiv preprint arXiv:2208.06821},
-  year={2022}
+  journal={IEEE Transactions on Image Processing},
+  year={2023},
+  publisher={IEEE}
 }
 ```
