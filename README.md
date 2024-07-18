@@ -1,6 +1,6 @@
 # Fast Learning Radiance Fields by Shooting Much Fewer Rays
 
- [Wenyuan Zhang](https://zparquet.github.io/)<sup>1</sup>,
+ [Wenyuan Zhang](https://wen-yuan-zhang.github.io/)<sup>1</sup>,
  [Ruofan Xing](https://breezexrf.github.io/)<sup>1</sup>,
  [Yunfan Zeng](https://zengyf131.github.io/)<sup>1</sup>,
  [Yu-Shen Liu](https://yushen-liu.github.io/)<sup>1</sup>,
@@ -9,7 +9,7 @@
 
  <sup>1</sup>Tsinghua University, <sup>2</sup>Kuaishou Technology, <sup>3</sup>Wayne State University  
 
-### [Project Page](https://zparquet.github.io/Fast-Learning/) |  [Paper](https://arxiv.org/pdf/2208.06821.pdf)
+### [Project Page](https://wen-yuan-zhang.github.io/Fast-Learning/) |  [Paper](https://arxiv.org/pdf/2208.06821.pdf)
 In this work, we introduce a general strategy to speed up the learning procedure for almost all radiance fields based methods by shooting much fewer rays. 
 <br><br>
 
@@ -130,11 +130,13 @@ CUDA_VISIBLE_DEVICES=0 python python main_nerf.py data/TanksAndTemple/Family --w
 ## Citation
 
 ```
-@article{zhang2022fast,
-  title={Fast Learning Radiance Fields by Shooting Much Fewer Rays},
-  author={Zhang, Wenyuan and Xing, Ruofan and Zeng, Yunfan and Liu, Yu-Shen and Shi, Kanle and Han, Zhizhong},
-  journal={IEEE Transactions on Image Processing},
-  year={2023},
-  publisher={IEEE}
-}
+@article{zhang2023fast,
+      title={Fast Learning Radiance Fields by Shooting Much Fewer Rays},
+      author={Zhang, Wenyuan and Xing, Ruofan and Zeng, Yunfan and Liu, Yu-Shen and Shi, Kanle and Han, Zhizhong},
+      journal={IEEE Transactions on Image Processing},
+      volume={32},
+      pages={2703--2718},
+      year={2023},
+      publisher={IEEE}
+    }
 ```
