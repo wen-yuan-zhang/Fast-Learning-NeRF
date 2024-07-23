@@ -9,7 +9,7 @@
 
  <sup>1</sup>Tsinghua University, <sup>2</sup>Kuaishou Technology, <sup>3</sup>Wayne State University  
 
-### [Project Page](https://wen-yuan-zhang.github.io/Fast-Learning/) |  [Paper](https://arxiv.org/pdf/2208.06821.pdf)
+### [Project Page](https://wen-yuan-zhang.github.io/Fast-Learning-NeRF/) |  [Paper](https://arxiv.org/pdf/2208.06821.pdf)
 In this work, we introduce a general strategy to speed up the learning procedure for almost all radiance fields based methods by shooting much fewer rays. 
 <br><br>
 
